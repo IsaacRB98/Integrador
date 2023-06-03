@@ -1,8 +1,9 @@
-import {ADD_FAV, REMOVE_FAV} from '../actions/actions'
+import {ADD_FAV, FILTER, ORDER, REMOVE_FAV} from '../actions/actions'
 
 
 const initialState = {
     myFavorites: [],
+    allCharacters:[]
 }
 
 
@@ -11,7 +12,8 @@ const rootReducer=(state = initialState, action)=>{
         case ADD_FAV:
             return{
                 ...state,
-                myFavorites:[...state.myFavorites, action.payload]
+                myFavorites:[...state.myFavorites, action.payload],
+                allCharacters:[...state.allCharacters, action.payload]
             }
         case REMOVE_FAV:
             return{
@@ -20,7 +22,22 @@ const rootReducer=(state = initialState, action)=>{
                     return personaje.id !== Number(action.payload)//Number(payload)
                 })
             }    
-
+        case FILTER:
+            let copy3 = state.allCharacters.filter((char)=> { 
+                return char.gender === action.payload
+            })    
+            return{
+                ...state,
+                myFavorites: copy3
+            }    
+        case ORDER:
+            let copy4= state.allCharacters.sort((a,b)=> {
+                return action.payload === 'A' ? a.id - b.id : b.id - a.id
+            })
+            return{
+                ...state,
+                myFavorites: copy4
+            }
         default:
             return {...state}
     }

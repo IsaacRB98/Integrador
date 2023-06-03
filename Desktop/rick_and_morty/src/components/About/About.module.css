@@ -1,0 +1,10 @@
+.presentacion{
+    color: white;
+    font-size: 23px;
+    font-family: Rick_and_Morty;
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    border: white solid;
+    background-color: rgba(3, 70, 3, 0.719);
+}

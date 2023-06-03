@@ -51,10 +51,7 @@ function App() {
          navigate('/home');
       }
    }
-   function logOut(){
-      setAccess(false);
-      navigate('/')
-   }
+   
 
    useEffect(() => {
       !access && navigate('/');
@@ -66,7 +63,7 @@ function App() {
          
         { pathname !== '/' && <Nav  onSearch={onSearch}/> }
          <Routes>
-            <Route path= {'/'} element={<Form  logOut = {logOut }login = {login}/>}></Route>
+            <Route path= {'/'} element={<Form  login = {login}/>}></Route>
             <Route path={ROUTES.ABOUT} element={<About/>} ></Route>
             <Route path={ROUTES.HOME} element={<Cards characters={characters} onClose={onClose}/>} ></Route>
             <Route path='/Favorite' element= {<Favorite/>} ></Route>
