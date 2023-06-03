@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    /* border: black solid; */
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    /* flex-direction: column; */
+}

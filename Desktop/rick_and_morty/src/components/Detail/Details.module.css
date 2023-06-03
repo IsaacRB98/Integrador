@@ -1,0 +1,21 @@
+.details{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: row-reverse;
+    font-family: 'Courier New', Courier, monospace;
+color: white;
+background-color: rgba(0, 128, 0, 0.452);
+padding: 1em;
+/* align-items: flex-start; */
+justify-content: flex-end;
+
+}
+.details img.imagen{
+    border-radius: 2em;
+    border: black solid;
+} 
+
+.details2{
+    padding: 2.5em;
+}

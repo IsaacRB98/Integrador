@@ -1,0 +1,20 @@
+.fondo{
+    background-color: chartreuse;
+    width: 80%;
+    height: 30px;
+    font-size: 17px;
+    border-top-left-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    
+}
+ .boton {
+    background-color: red;
+    height: 30px;
+    border-top-right-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    color: white;
+ }
+ .barracompleta{
+    display: flex;
+    flex-direction: row;
+   }
