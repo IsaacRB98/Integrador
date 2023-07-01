@@ -1,8 +1,8 @@
 //Con EXPRESS
 const express = require('express');
-const router = require('./routes/index');
 
 const server = express();
+const router = require('./routes/index');
 const PUERTO = 3001;
 
 server.use((req, res, next) => {
@@ -19,7 +19,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(express.json);
+server.use(express.json());
 server.use('/rickandmorty', router)
 
 server.listen(PUERTO, () => {

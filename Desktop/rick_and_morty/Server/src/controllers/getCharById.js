@@ -13,7 +13,7 @@ const getCharById = async (req, res)=>{
 
         return character.name ? res.json(character) : res.status(404).json({message: error})
     } catch(reason){
-        return res.status(500).send({reason: message})
+        return res.status(500).json({message: reason})
     }
 }
 

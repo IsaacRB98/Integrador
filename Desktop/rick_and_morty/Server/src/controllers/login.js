@@ -10,8 +10,8 @@ const login = (req, res)=>{
             access = true;
         }
     })
-    return res.status(200).json({access})
-
+    return res.json({access: access})
+//status(200).
 };
 
 module.exports = login;

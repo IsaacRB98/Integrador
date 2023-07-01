@@ -68,8 +68,8 @@ const onSearch = async (id)=>{
 
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
-   const EMAIL = 'ejemplo@gmail.com';
-   const PASSWORD = '1Password';
+   // const EMAIL = 'ejemplo@gmail.com';
+   // const PASSWORD = '1Password';
    //ANTES DE EXPRESS
   /* function login(userData) {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
@@ -81,12 +81,13 @@ const onSearch = async (id)=>{
 //DESPUES DE EXPRESS
 
 //VERSION ASYNC AWAIT
-const login = async (userData)=>{
+ async function login (userData){
    
    try {
    const URL = 'http://localhost:3001/rickandmorty/login/';
    const { email, password } = userData;
-   const { data } = await axios(`${URL}?email=${email}&password=${password}`);
+   // const { data } = await axios(`${URL}?email=${email}&password=${password}`);
+   const { data } = await axios(URL + `?email=${email}&password=${password}`)
    const {access} = data;
       setAccess(data)
       access && navigate('/home')
