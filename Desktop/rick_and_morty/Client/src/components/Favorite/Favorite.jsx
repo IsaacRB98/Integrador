@@ -18,6 +18,7 @@ import { orderCards } from "../../redux/actions/actions";
     
     const handleFilter =(event)=>{
        dispatch(filterCards(event.target.value))
+       setAux(!aux)
     }
     
 

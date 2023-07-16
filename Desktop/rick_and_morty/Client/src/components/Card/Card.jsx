@@ -44,7 +44,7 @@ export  function Card(props) {
          <button onClick={handleFavorite}>🤍</button>
          )
          }
-         <button onClick={() =>{onClose(id);}}>X</button>
+         <button onClick={() =>{onClose(id)}}>X</button>
       </div>
    );
 }

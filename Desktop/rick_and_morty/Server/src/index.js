@@ -1,6 +1,6 @@
 //Con EXPRESS
 const express = require('express');
-
+const {conn} = require('./DB_connection');
 const server = express();
 const router = require('./routes/index');
 const PUERTO = 3001;
@@ -22,9 +22,15 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use('/rickandmorty', router)
 
-server.listen(PUERTO, () => {
-    console.log('Server raised in port:' + `${PUERTO}`);
-});
+conn.sync({force: false}).then(()=>{
+
+  server.listen(PUERTO, () => {
+      console.log('Server raised in port:' + `${PUERTO}`);
+  })
+}).catch((error)=>{
+  console.log(error);
+})
+
 
 
 

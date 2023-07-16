@@ -43,10 +43,11 @@ const onSearch = async (id)=>{
    try{
       const { data }= await axios(`http://localhost:3001/rickandmorty/character/${id}`)
       if (data.name) {
-         setCharacters((oldChars) => [...oldChars, data]);
-      } else {
+         //setCharacters((oldChars) => [...oldChars, data]);
+         setCharacters([...characters, data]);
+      } /*else {
          window.alert('¡No hay personajes con este ID!');
-      }
+      }*/
 
    } catch(error){
       // window.alert(error.message)
